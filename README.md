@@ -15,8 +15,35 @@ A Python-based web scraper that recursively crawls documentation websites and co
 
 ## Installation
 
+### Prerequisites
+- Python 3.8 or higher
+- pip (Python package installer)
+
+### Setting up a Virtual Environment
+It's recommended to use a virtual environment to avoid conflicts with other Python projects:
+
+1. Create a virtual environment:
+```bash
+python -m venv venv
+```
+
+2. Activate the virtual environment:
+```bash
+# On macOS/Linux:
+source venv/bin/activate
+
+# On Windows:
+venv\Scripts\activate
+```
+
+3. Install dependencies:
 ```bash
 pip install -r requirements.txt
+```
+
+To deactivate the virtual environment when you're done:
+```bash
+deactivate
 ```
 
 ## Usage
@@ -39,15 +66,17 @@ python scraper.py --test <url>
 
 ## Output
 
-The scraper generates the following in the `output` directory:
+The scraper organizes its output in the following directory structure:
 
-1. Individual markdown files for each documentation page
-2. `structure.json` containing the documentation hierarchy
-3. `compiled-documentation.md` combining all pages into a single, navigable document
+```
+output/
+├── docs/              # Individual markdown files for each documentation page
+└── compiled/
+    ├── structure.json # Documentation hierarchy
+    └── compiled-documentation.md  # Single navigable document
+```
 
-## Output Format
-
-### Individual Files
+### Individual Files (in docs/)
 - Clean markdown formatting
 - Preserved source URLs
 - Well-organized sections
